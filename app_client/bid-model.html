@@ -1,0 +1,27 @@
+<div class="model-content">
+    <form id="addBid" name="addBid" role="form" ng-submit="vm.onSubmit()" class="form-horizontal">
+        <div class="model-header">
+            <button type="button" ng-click="vm.model.cancel()" class="close"><span aria-hidden="true">x</span><span class="sr-only">Close</span> </button>
+            <h4 id="myModelLabel" class="model-title">Add your bid for {{vm.itemData.name}}</h4>
+        </div>
+        <div class="model-body">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{vm.formError}}</div>
+            <div class="form-group">
+                <label for="username" class="col-sm-4 control-label">Username</label>
+                <div class="col-sm-6">
+                    <input id="username" name="username" required="required" ng-model="vm.formData.username" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="price" class="col-sm-4 control-label">Price</label>
+                <div class="col-sm-6">
+                    <input id="price" name="price" type="number" required="required" ng-model="vm.formData.price" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <div class="model-footer">
+            <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit bid</button>
+        </div>
+    </form>
+</div>

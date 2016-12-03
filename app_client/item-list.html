@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-8">
+        <h2 class="pull-left">Items</h2>
+        <a class="btn btn-default nav-btn pull-right" href="#/new-item">Add Item</a>
+    </div>
+    <div class="col-md-8">
+        <ul class="list-group">
+            <li ng-repeat="item in vm.items" class="list-group-item">
+                <h5>
+                    <a ng-href="#/items/{{item._id}}">
+                        {{item.name}}
+                    </a>
+                    <span class="pull-right" ng-repeat="bid in item.bids | orderBy: '-price' | limitTo: 1">
+                        <b>{{bid.price | currency }}</b>
+                    </span>
+                </h5>
+                <p>
+                    {{item.description}}
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-8">
+        <h2 class="pull-left">{{vm.item.name}}</h2>
+    </div>
+    <div class="col-md-8">
+        <p>{{vm.item.description}}</p>
+        <p>Starting price:  <b>{{vm.item.startingPrice | currency}}</b></p>
+    </div>
+    <div class="col-md-8">
+        <h3 class="pull-left">Bids</h3>
+        <a ng-click="vm.popupBidForm()" class="btn btn-default nav-btn pull-right">Add Bid</a>
+    </div>
+</div>
+<table class="table table-striped">
+    <tbody class="col-md-8">
+    <tr  ng-repeat="bid in vm.item.bids">
+        <td class="col-md-1">
+            {{bid.username}}
+        </td>
+        <td  class="col-md-6">
+            {{bid.createdOn | date:'short'}}
+        </td>
+        <td  class="col-md-1 text-right">
+            <b>{{bid.price | currency}}</b>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a ng-click="vm.back()" class="btn btn-default">Back</a>
+</div>
